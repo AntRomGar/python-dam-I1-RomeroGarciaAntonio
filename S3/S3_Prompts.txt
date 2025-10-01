@@ -1,0 +1,25 @@
+
+===============
+Perfil:
+===============
+1- Podrias hacerme un programa en py de manera muy básica que pida el nombre + el año de nacimiento, 
+que calcule la edad y la clasifique por tramo (<18, 18-65, >65) y 
+manejo de error si no se mete un numero y que me lo comentes, tambien quiero 
+que me lo organizes en modulos (separados sin crear clases) para trabajar mejor y analizarlo mejor,
+para alguien que esta aprendiendo python, recuerda definir primero las variables que necesitemos 
+y luego las llamamos, sin usar definiciones
+
+
+ 2- mas sencillo
+
+
+ =================================
+ Eco IO:
+ =================================
+- Podrias hacerme un codigo muy sencillo de pyton sin definiciones para que me pida 3 numeros notas de 0/100,
+ me muestre una suma, una media y la mayor (partiendo de los 3 numeros para cada resultado), que sea ademas 
+ si la media sale por debajo de 50 puntos sea suspenso y si es por encima este aprobado, enseñamelo como si 
+ estubiera aprendiendo python
+
+- Añademe por si hubiese manejo de errores
+
