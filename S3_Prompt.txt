@@ -1,3 +1,6 @@
 
 Perfil:
-Podrias hacerme un programa en py que pida el nombre + el año de nacimiento, que calcule la edad y la clasifique por tramo (<18, 18-65, >65) y manejo de error si no se mete un numero y que me lo comentes
+Podrias hacerme un programa en py que pida el nombre + el año de nacimiento, 
+que calcule la edad y la clasifique por tramo (<18, 18-65, >65) y 
+manejo de error si no se mete un numero y que me lo comentes, tambien quiero 
+que me lo organizes en modulos para trabajar mejor y analizarlo mejor, para alguien que esta aprendiendo python
