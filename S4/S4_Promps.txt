@@ -1,0 +1,34 @@
+=========================
+lista_numeros.py
+=========================
+
+necesito pedir una lista de numeros organizados y seprarados por comas 
+para convertilos a float con control de errores y poder mostrar la suma, 
+una media, el máximo y los duplicados en un script de python
+
+
+=========================
+temperaturas.py
+=========================
+Necesito un script de python que sea un conversor de temperaturas 
+de grados kelvin o a farengeit que me pida las opciones mediante 
+seleccion 1 o 2  y que tambien me pida el numero
+
+
+
+==========================
+cadenas.py
+==========================
+
+Generame un codigo e python que pida una cadena y 
+cuente las vocales que tiene , las consonantes, las mayusculas 
+y el numero de caracteres que tiene
+
+
+==========================
+primo.py
+==========================
+
+
+Necesito un codigo en python que pida un numero 
+y nos diga si es primo o no
