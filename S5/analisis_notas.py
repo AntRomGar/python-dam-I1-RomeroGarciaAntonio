@@ -127,7 +127,6 @@ def main():
     print(f"Porcentaje de sobresalientes: {porcentajes['Sobresalientes']:.2f}%")
     print(f"Porcentaje de Necesita Refuerzo: {porcentajes['Necesita Refuerzo']:.2f}%")
     print(f"Moda(s): {', '.join(str(m) for m in modas)}")
-    print(f"Moda(s): {', '.join(str(m) for m in modas)}")
     # print() muestra en pantalla el texto formateado con f-string
     
     # Dentro del f-string, se construye una cadena con:
