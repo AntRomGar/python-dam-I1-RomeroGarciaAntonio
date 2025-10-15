@@ -1,47 +1,81 @@
-from collections import Counter                                                     # Importa la clase Counter del módulo collections para contar frecuencias de elementos.
+from collections import Counter  # Importa Counter para contar frecuencia de calificaciones.
 
-def pedir_notas():                                                                  # Solicita al usuario una lista de calificaciones,
+def pedir_notas():
+    
+    #Solicita al usuario una lista de calificaciones separadas por comas.
+    #Valida cada entrada y solo acepta valores numéricos válidos entre 0 y 10.
+    
+    notas = []
     notas_str = input("Introduce las calificaciones separadas por comas: ")
-    partes = notas_str.split(",")                                                   # Paso 2: Dividir la cadena en partes usando la coma como separador
-    notas = []                                                                      # Paso 3: Inicializar una lista vacía para almacenar las calificaciones
-    for parte in partes:                                                            # Paso 4: Recorrer cada parte de la lista original
-        nota_limpia = parte.strip()                   
-                                      
-        if nota_limpia:                                                             # Verificar que no esté vacía (por si el usuario puso comas de más)
-            notas.append(float(nota_limpia))                                        # Convertir a número decimal (float) y agregarlo a la lista de notas
+    partes = notas_str.split(",")
+
+    for parte in partes:
+        nota_limpia = parte.strip()
+        if nota_limpia:
+            try:
+                nota = float(nota_limpia)
+                if 0 <= nota <= 10:
+                    notas.append(nota)
+                else:
+                    print(f"Nota fuera de rango (0-10): '{nota_limpia}' → Ignorada.")
+            except ValueError:
+                print(f"Entrada inválida: '{nota_limpia}' no es un número → Ignorada.")
     return notas
 
-def resumen_estadistico(notas):                                                     # Calcula un resumen estadístico de las calificaciones: total, media, mínima y máxima.
-    total = len(notas)                                                                  # Número total de calificaciones.
-    media = sum(notas) / total if total > 0 else 0                                  # Media aritmética.
-    minima = min(notas) if total > 0 else None                                          # Nota mínima.
-    maxima = max(notas) if total > 0 else None                                      # Nota máxima.
+def resumen_estadistico(notas):
+    #Calcula un resumen estadístico de las calificaciones: total, media, mínima y máxima.
+
+    total = len(notas)
+    media = round(sum(notas) / total, 2) if total > 0 else 0
+    minima = min(notas) if total > 0 else None
+    maxima = max(notas) if total > 0 else None
     return total, media, minima, maxima
 
-def porcentaje_aprobados(notas):                                                    # Calcula el porcentaje de aprobados, sobresalientes y estudiantes que necesitan refuerzo.
-    aprobados = sum(1 for n in notas if n >= 5)                                         # Calificaciones mayores o iguales a 5.
-    sobresalientes = sum(1 for n in notas if n >= 9)                                # Calificaciones mayores o iguales a 9.
-    necesita_refuerzo = sum(1 for n in notas if n < 5)                                  # Calificaciones menores a 5.
-    total = len(notas)                                                              # Total de calificaciones.
+def porcentaje_aprobados(notas):
+    """
+    Calcula los porcentajes de:
+    - Aprobados (nota >= 5)
+    - Sobresalientes (nota >= 9)
+    - Necesita Refuerzo (nota < 5)
+    """
+    total = len(notas)
+    aprobados = sum(1 for n in notas if n >= 5)
+    sobresalientes = sum(1 for n in notas if n >= 9)
+    necesita_refuerzo = sum(1 for n in notas if n < 5)
     return {
         "Aprobados": (aprobados / total * 100) if total > 0 else 0,
         "Sobresalientes": (sobresalientes / total * 100) if total > 0 else 0,
         "Necesita Refuerzo": (necesita_refuerzo / total * 100) if total > 0 else 0
     }
 
-def moda(notas):                                                                    # Calcula la moda (o modas) de las calificaciones, es decir, las más frecuentes.
-    contador = Counter(notas)                                                           # Cuenta la frecuencia de cada calificación.
-    max_frecuencia = max(contador.values())                                         # Encuentra la frecuencia máxima.
-    modas = [nota for nota, freq in contador.items() if freq == max_frecuencia]         # Notas con frecuencia máxima.
+def moda(notas):
+    """
+    Calcula la(s) moda(s): nota(s) más frecuente(s) entre las calificaciones.
+    Si hay empate, muestra todas.
+    """
+    if not notas:
+        return []
+    contador = Counter(notas)
+    max_frecuencia = max(contador.values())
+    modas = [nota for nota, freq in contador.items() if freq == max_frecuencia]  # Crea una lista con las notas que tienen la frecuencia máxima (es decir, las más repetidas).               
     return modas
 
-def main():                                                                         # Función principal que coordina la ejecución del programa.
-    notas = pedir_notas()                                                               # Solicita las calificaciones al usuario.
-    total, media, minima, maxima = resumen_estadistico(notas)                       # Calcula el resumen estadístico.
-    porcentajes = porcentaje_aprobados(notas)                                           # Calcula los porcentajes de aprobados, sobresalientes y refuerzo.
-    modas = moda(notas)                                                             # Calcula la moda de las calificaciones.
+def main():
+    """
+    Función principal que organiza la ejecución del programa.
+    """
+    notas = pedir_notas()
 
-    print("\n--- Boletín de Aula ---")                                              # Imprime el boletín con los resultados.
+    if not notas:
+        print("No se ingresaron calificaciones válidas. Programa terminado.")
+        return
+
+    total, media, minima, maxima = resumen_estadistico(notas)
+    porcentajes = porcentaje_aprobados(notas)
+    modas = moda(notas)
+
+    # Mostrar los resultados
+    print("\n--- Boletín de Aula ---")
     print(f"Número total de notas: {total}")
     print(f"Media: {media:.2f}")
     print(f"Nota mínima: {minima}")
@@ -51,5 +85,5 @@ def main():                                                                     
     print(f"Porcentaje de Necesita Refuerzo: {porcentajes['Necesita Refuerzo']:.2f}%")
     print(f"Moda(s): {', '.join(str(m) for m in modas)}")
 
-if __name__ == "__main__":                                                          # Ejecuta la función principal solo si el archivo se ejecuta directamente.
+if __name__ == "__main__":
     main()
