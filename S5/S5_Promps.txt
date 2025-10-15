@@ -15,7 +15,8 @@ Segundo prompt
 =========================
 
 Se imprimen todos los resultados a la vez y valida que todos los valores numeriocs sean try/except, 
-redondear la media a 2 decimales, mostrar los resultados formateados usando f-string y comentar las funciones del codigos
+redondear la media a 2 decimales, mostrar los resultados formateados usando f-string y 
+comentar las funciones del codigos
 
 
 Tercer prompt
@@ -25,3 +26,5 @@ Hay algunos codigos que no los termino de comprender podrias explicarme en el co
 que hace las funciones mas complejas del codigo? y explicarme la linea :
 
   print(f"Moda(s): {', '.join(str(m) for m in modas)}")
+
+mas detalladamente

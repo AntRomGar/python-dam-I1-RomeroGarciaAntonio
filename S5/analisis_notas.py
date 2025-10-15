@@ -143,5 +143,9 @@ def main():
     # Moda(s): 5, 7, 9
     
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__":  
+    # comprueba si el archivo se está ejecutando directamente
+    main()  
+    # Si el archivo se está ejecutando directamente, llama a la función principal 'main()',
+    # que inicia todo el programa.
+
