@@ -5,7 +5,7 @@ lista_numeros.py
 Primer prompt
 ========================
 Necesto un codigo de python de manera que sea muy sencilla que me pida una lista de calificaciones 
-separadas con comas y muestre un resumen estadistico similar a un boletin de aula, que contenga un 
+separadas con comas validando la entrada y muestre un resumen estadistico similar a un boletin de aula, que contenga un 
 numero todal de notas, otra funcion que sea media, nota minima y nota maxima, luego otra funcion 
 que sea el porcentaje de aprobados si es igual a 5 o superior es aprobado pero si es igual o mayor 
 que 9 es sobresaliente , si es inferior a 5 es Necesita Refuerzo, ahora otra funcion es la nota

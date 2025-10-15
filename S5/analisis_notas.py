@@ -7,24 +7,24 @@ def pedir_notas():
     
     notas = []                                                                         # Lista vacía donde se guardarán las calificaciones válidas.
 
-    notas_str = input("Introduce las calificaciones separadas por comas: ")            # Solicita al usuario una cadena con notas separadas por comas.
-    partes = notas_str.split(",")                                                      # Divide la cadena en partes individuales usando la coma como separador.
+    notas_str = input("Introduce las calificaciones separadas por comas: ") # Solicita al usuario una cadena con notas separadas por comas.
+    partes = notas_str.split(",")  # Divide la cadena en partes individuales usando la coma como separador.
 
-    for parte in partes:                                                               # Recorre cada parte de la lista para procesar cada calificación.
-        nota_limpia = parte.strip()                                                    # Elimina espacios en blanco alrededor de la calificación.
+    for parte in partes:  # Recorre cada parte de la lista para procesar cada calificación.
+        nota_limpia = parte.strip()   # Elimina espacios en blanco alrededor de la calificación.
 
-        if nota_limpia:                                                                # Verifica que la entrada no esté vacía (por si hay comas seguidas).
+        if nota_limpia:     # Verifica que la entrada no esté vacía (por si hay comas seguidas).
             try:
-                nota = float(nota_limpia)                                              # Intenta convertir la entrada a número decimal.
+                nota = float(nota_limpia)  # Intenta convertir la entrada a número decimal.
 
-                if 0 <= nota <= 10:                                                    # Verifica que la nota esté en el rango válido (0 a 10).
-                    notas.append(nota)                                                 # Si es válida, la agrega a la lista de notas.
+                if 0 <= nota <= 10: # Verifica que la nota esté en el rango válido (0 a 10).
+                    notas.append(nota)  # Si es válida, la agrega a la lista de notas.
                 else:
                     print(f"Nota fuera de rango (0-10): '{nota_limpia}' → Ignorada.")  # Si está fuera de rango, muestra advertencia.
             except ValueError:
                 print(f"Entrada inválida: '{nota_limpia}' no es un número → Ignorada.")  # Si no se puede convertir a número, muestra error.
 
-    return notas                                                                         # Devuelve la lista final con solo las calificaciones válidas.
+    return notas   # Devuelve la lista final con solo las calificaciones válidas.
 
 
 def resumen_estadistico(notas):
