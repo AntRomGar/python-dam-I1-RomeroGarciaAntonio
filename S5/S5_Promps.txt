@@ -1,0 +1,20 @@
+=========================
+lista_numeros.py
+=========================
+
+Primer prompt
+========================
+Necesto un codigo de python que me pida una lista de calificaciones separadas con comas y 
+muestre un resumen estadistico similar a un boletin de aula, que contenga un numero todal de notas, 
+otra funcion que sea media, nota minima y nota maxima, luego otra funcion que sea el porcentaje de 
+aprobados si es igual a 5 o superior es aprobado pero si es igual o mayor que 9 es sobresaliente , 
+si es inferior a 5 es Necesita Refuerzo, ahora otra funcion es la nota mas repetida (la moda), 
+si hay notas iguales , muestra todas
+
+Segundo prompt
+=========================
+
+Se imprimen todos los resultados a la vez y valida que todos los valores numeriocs sean try/except, 
+redondear la media a 2 decimales, mostrar los resultados formateados usando f-string y comentar las funciones del codigos
+
+
