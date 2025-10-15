@@ -11,20 +11,19 @@ def pedir_lista_numeros():
             print(f"Valor inválido ignorado: '{valor.strip()}'")
     return numeros
 
-# Recibe una lista de números y calcula estadísticas 
-# básicas como suma, media, máximo y duplicados.
-def mostrar_estadisticas(numeros):
+def mostrar_estadisticas(numeros):                                  # Recibe una lista de números y calcula estadísticas        
     if not numeros:
         print("No se ingresaron números válidos.")
         return
     suma = sum(numeros)
-    media = suma / len(numeros)
-    maximo = max(numeros)
-    duplicados = set([x for x in numeros if numeros.count(x) > 1])
-    print(f"Suma: {suma}")
-    print(f"Media: {media}")
+    media = suma / len(numeros)                                      # Calcula la media de la lista de números.
+    maximo = max(numeros)                                            # Encuentra el valor máximo en la lista de números.   
+    duplicados = set([x for x in numeros if numeros.count(x) > 1])   # Encuentra los números duplicados en la lista.
+    print(f"Suma: {suma}")                                                                         
+    print(f"Media: {media}")    
     print(f"Máximo: {maximo}")
     print(f"Duplicados: {', '.join(map(str, duplicados)) if duplicados else 'Ninguno'}")
+
     # Muestra los números duplicados en la lista, separados por comas. Si no hay duplicados, muestra 'Ninguno'.
     # 1. map(str, duplicados): Convierte cada número duplicado en una cadena.
     # 2. ', '.join(...): Une las cadenas resultantes con comas y espacios.
